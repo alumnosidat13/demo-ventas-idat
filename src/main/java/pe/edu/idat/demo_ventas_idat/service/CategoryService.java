@@ -16,6 +16,13 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
+    public Category obtenerCategoriaXid(int id){
+        //select * from categories where categoryid=:id
+        return categoryRepository.findById(id)
+                .orElse(null);
+    }
+
+
     public void guardarCategoria(Category category){
         //insert into categories values (.....)
         //update categories set ..... where ....
