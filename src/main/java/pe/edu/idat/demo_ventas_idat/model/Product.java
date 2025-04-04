@@ -10,7 +10,7 @@ public class Product {
     private Integer productid;
     //@Column(name = "product_name")
     private String productname; // productName  ==>  product_name
-    private String quantityPerUnit;
+    private String quantityperunit;
     private Integer reorderlevel;
     private Double unitprice;
     private Integer unitsinstock;
@@ -22,6 +22,30 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "supplierid")
     private Supplier supplier;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public String getQuantityperunit() {
+        return quantityperunit;
+    }
+
+    public void setQuantityperunit(String quantityperunit) {
+        this.quantityperunit = quantityperunit;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
 
     public Integer getProductid() {
         return productid;
@@ -37,14 +61,6 @@ public class Product {
 
     public void setProductname(String productname) {
         this.productname = productname;
-    }
-
-    public String getQuantityPerUnit() {
-        return quantityPerUnit;
-    }
-
-    public void setQuantityPerUnit(String quantityPerUnit) {
-        this.quantityPerUnit = quantityPerUnit;
     }
 
     public Integer getReorderlevel() {
